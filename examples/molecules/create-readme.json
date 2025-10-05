@@ -1,0 +1,19 @@
+{
+  "id": "create-readme-with-validation",
+  "description": "Create a README with pre-validation that directory exists",
+  "actions": [
+    {
+      "toolID": "write",
+      "params": {
+        "filePath": "examples/molecules/output/README.md",
+        "content": "# Molecule Test Project\n\nThis README was created by an Agentic Molecule.\n\n## Features\n- Validated execution\n- Deterministic behavior\n- Auditable attestations\n"
+      }
+    }
+  ],
+  "oracles": [
+    {
+      "type": "bash",
+      "check": "test -d examples/molecules/output && echo 'directory exists'"
+    }
+  ]
+}

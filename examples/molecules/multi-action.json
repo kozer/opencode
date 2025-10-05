@@ -1,0 +1,33 @@
+{
+  "id": "multi-action-example",
+  "description": "Create multiple files with bash and write tools",
+  "actions": [
+    {
+      "toolID": "bash",
+      "params": {
+        "command": "mkdir -p examples/molecules/output/project",
+        "description": "Create project directory"
+      }
+    },
+    {
+      "toolID": "write",
+      "params": {
+        "filePath": "examples/molecules/output/project/package.json",
+        "content": "{\n  \"name\": \"molecule-example\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Created by Agentic Molecule\"\n}\n"
+      }
+    },
+    {
+      "toolID": "write",
+      "params": {
+        "filePath": "examples/molecules/output/project/index.js",
+        "content": "console.log('Hello from Molecule!');\n"
+      }
+    }
+  ],
+  "oracles": [
+    {
+      "type": "bash",
+      "check": "test -d examples/molecules/output"
+    }
+  ]
+}
