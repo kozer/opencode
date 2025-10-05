@@ -1,0 +1,19 @@
+{
+  "id": "oracle-failure-test",
+  "description": "Test oracle failure - should block execution",
+  "actions": [
+    {
+      "toolID": "write",
+      "params": {
+        "filePath": "examples/molecules/output/should-not-be-created.txt",
+        "content": "This file should NOT be created because the oracle will fail.\n"
+      }
+    }
+  ],
+  "oracles": [
+    {
+      "type": "bash",
+      "check": "test -d /nonexistent-directory && echo 'directory exists'"
+    }
+  ]
+}

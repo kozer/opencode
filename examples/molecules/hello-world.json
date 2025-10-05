@@ -1,0 +1,14 @@
+{
+  "id": "hello-world",
+  "description": "Create a simple hello world file",
+  "actions": [
+    {
+      "toolID": "write",
+      "params": {
+        "filePath": "examples/molecules/output/hello-molecule.txt",
+        "content": "Hello from Agentic Molecules!\n\nThis file was created by a molecule execution.\n"
+      }
+    }
+  ],
+  "oracles": []
+}
